@@ -17,8 +17,10 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
    * a path of `/`.
    */
   def index = Action {
+//    The import views.html.index cannot be resolved
+//    https://github.com/scala-ide/scala-ide-play2/issues/215
 //    Ok(views.html.index("Your new application is ready."))
-      print("Hello world")
+//      print("Hello world")
       Ok("hello world")
   }
 
