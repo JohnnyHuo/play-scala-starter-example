@@ -39,7 +39,8 @@ jvm_binary(name='demo-bin',
 scala_library(
         name='demo_lib',
 #        sources=rglobs('app/*.scala'),
-        sources=['conf/MyApplicationLoader.scala',
+        sources=['api/ApiRouter.scala',
+                 'conf/MyApplicationLoader.scala',
                  'app/controllers/AsyncController.scala',
                  'app/controllers/CountController.scala',
                  'app/controllers/HomeController.scala',
@@ -50,19 +51,20 @@ scala_library(
                  ],
         dependencies=[
                 'conf:play-conf',
-                ':public_assets',
-                ':htmls',
+#                ':public_assets',
+#                ':htmls',
                 '3rdparty/jvm:guice',
+#                '3rdparty/jvm:akka-http',
 #                '3rdparty/jvm:scalatestplus',
 #                '3rdparty/jvm:h2',
                 '3rdparty/jvm:play',
 #                '3rdparty/jvm:play-server',
-                '3rdparty/jvm:play-filter',
-                '3rdparty/jvm:play-netty-server'
+#                '3rdparty/jvm:play-filter',
+#                '3rdparty/jvm:play-netty-server'
 #                rglobs('public/*'),
 #                globs('app/views/*')
                 ])
 
-resources(name='public_assets', sources=rglobs('public/*'))
-resources(name='htmls', sources=globs('app/views/*'))
+#resources(name='public_assets', sources=rglobs('public/*'))
+#resources(name='htmls', sources=globs('app/views/*'))
 
